@@ -8,13 +8,19 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Simple Sidebar - Start Bootstrap Template</title>
+  <title>Playground - Find Two Arrays Sum</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/simple-sidebar.css" rel="stylesheet">
+  <link href="../css/simple-sidebar.css" rel="stylesheet">
+
+  <!-- The js file for the core function-->
+  <script src="../js/helper/stringToArray.js"></script>
+  <script src="../js/helper/randomNumbers.js"></script>
+  <script src="../js/post/findTwoArraysSum.js"></script>
+ 
 
 </head>
 
@@ -68,8 +74,31 @@
       </nav>
 
       <div class="container-fluid">
-        <h1 class="mt-4">Algorithm Playground</h1>
-        <p>Just a page for me to practice algorithm.</p>
+        <h1 class="mt-4">Finding Two Arrays Sum Algorithm</h1>
+        <p><a href="https://www.random.org/integers/?num=1000&min=-1000&max=1000&col=1&base=10&format=html&rnd=new">useful link</a></p>
+        <textarea id="arrayInput1" 
+            placeholder="input array, seperate with space"
+            cols="100" rows="10"></textarea>
+        <button onclick="fillRandomNumbers(1000,0,1000,'arrayInput1')">Fill with Random Numbers</button>
+        <textarea id="arrayInput2" 
+            placeholder="input array, seperate with space"
+            cols="100" rows="10"></textarea>
+        <button onclick="fillRandomNumbers(1000,0,1000,'arrayInput2')">Fill with Random Numbers</button>
+        <input id="sumInput" placeholder="input sum of two arrays">
+
+        <h2 class='mt-4'>Brute Force</h2>
+        <button onclick="startfindTwoArraysSumBF(stringToArray(document.getElementById('arrayInput1').value), 
+            stringToArray(document.getElementById('arrayInput2').value),
+            parseInt(document.getElementById('sumInput').value),'bruteForceResult')">Start Finding</button>
+        <p id="bruteForceResult" class="result"></p>
+
+        <h2 class='mt-4'>Greedy</h2>
+        <button onclick="startfindTwoArraysSumGD(stringToArray(document.getElementById('arrayInput1').value), 
+            stringToArray(document.getElementById('arrayInput2').value),
+            parseInt(document.getElementById('sumInput').value),'greedyResult')">Start Finding</button>
+        <p id="greedyResult" class="result"></p>
+        
+        
 
       </div>
     </div>
@@ -79,8 +108,8 @@
   <!-- /#wrapper -->
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Menu Toggle Script -->
   <script>

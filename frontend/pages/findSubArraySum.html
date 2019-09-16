@@ -19,8 +19,7 @@
   <!-- The js file for the core function-->
   <script src="../js/helper/stringToArray.js"></script>
   <script src="../js/helper/randomNumbers.js"></script>
-  <script src="../js/findSubArraySum/findSubArraySumBF.js"></script>
-  <script src="../js/findSubArraySum/findSubArraySumDR.js"></script>
+  <script src="../js/post/findSubArraySum.js"></script>
 
 </head>
 
@@ -32,9 +31,10 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Algorithm playground </div>
       <div class="list-group list-group-flush">
-        <a href="../index.html" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-        <a href="sorting.html" class="list-group-item list-group-item-action bg-light">Sorting</a>
-        <a href="findSubArraySum.html" class="list-group-item list-group-item-action bg-light">Finding Numbers</a>
+        <a href="index.html" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+        <a href="./pages/sorting.html" class="list-group-item list-group-item-action bg-light">Sorting</a>
+        <a href="./pages/findSubArraySum.html" class="list-group-item list-group-item-action bg-light">Find Subarray Sum</a>
+        <a href="./pages/findTwoArraysSum.html" class="list-group-item list-group-item-action bg-light">Find Two Array Sum</a>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -75,7 +75,9 @@
       <div class="container-fluid">
         <h1 class="mt-4">Finding Subarray Sum Algorithm</h1>
         <p><a href="https://www.random.org/integers/?num=1000&min=-1000&max=1000&col=1&base=10&format=html&rnd=new">useful link</a></p>
-        <input id="arrayInput" placeholder="input array, seperate with space">
+        <textarea id="arrayInput" 
+            placeholder="input array, seperate with space"
+            cols="100" rows="10"></textarea>
         <button onclick="fillRandomNumbers(1000,0,1000,'arrayInput')">Fill with Random Numbers</button>
         <input id="sumInput" placeholder="input sum of the subarray">
 

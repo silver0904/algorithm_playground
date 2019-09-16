@@ -8,19 +8,15 @@ module.exports = function dataReuse(arr, sum){
         for (j=pointer; j< arr.length; j++){
             subSum += arr[j];
             subResult.push(arr[j]);
-            if(subSum > sum) {
-                pointer==i?pointer=j+1:pointer=j;
-                while (subSum > sum){
-                    subSum-= subResult[0];
-                    subResult.shift();
-                    
-                }
-                break;
-            }
-            else if(subSum == sum){
-                pointer==i?pointer=j+1:pointer=j;
-                result.push(JSON.stringify(subResult));
                 
+            while (subSum > sum){
+                subSum-= subResult[0];
+                subResult.shift();
+                pointer=j+1;
+            }
+            if(subSum == sum){
+                pointer=j+1;
+                result.push(JSON.stringify(subResult));
                 subSum-= subResult[0];
                 subResult.shift();
                 break;
